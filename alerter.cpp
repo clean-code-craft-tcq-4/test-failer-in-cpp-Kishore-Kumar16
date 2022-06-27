@@ -14,7 +14,7 @@ void alertInCelcius(float farenheit) {
 
     if (returnCode != ALERT_OK) {
 
-        alertFailureCount += 0;
+        alertFailureCount += 1;
     }
 }
 

@@ -13,16 +13,17 @@ int printColorMap() {
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            std::cout << std::left << std::setw(MAX_WIDTH) <<i * 5 + j << " | " << std::setw(MAX_WIDTH)
-            << majorColor[i] << " | " << std::setw(MAX_WIDTH)<< minorColor[i] << "\n";
+            std::cout << std::left << std::setw(MAX_WIDTH) <<i * 5 + j + 1 << " | " << std::setw(MAX_WIDTH)
+            << majorColor[i] << " | " << std::setw(MAX_WIDTH)<< minorColor[j] << "\n";
 
+            
             int PairNum = ColorNum_To_PairNum(i, j, numberOfMinorColors);
 
-            assert(PairNum == i * 5 + j);
+            assert(PairNum == i * 5 + j + 1 ); // add 1 to get the correct Pairno index
 
             // Since "i" is taken for both minor & major color index, compare with "i"
             assert(PairNum_To_MajorColor(PairNum, numberOfMinorColors) == i);
-            assert(PairNum_To_MinorColor(PairNum, numberOfMinorColors) == i);
+            assert(PairNum_To_MinorColor(PairNum, numberOfMinorColors) == j);
         }
     }
     return i * j;
