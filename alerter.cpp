@@ -4,6 +4,7 @@
 #include "alerter.hpp"
 #include "alerter_test.cpp"
 
+
 int alertFailureCount = 0;
 
 void alertInCelcius(float farenheit) {
